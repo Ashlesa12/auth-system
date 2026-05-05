@@ -37,6 +37,12 @@ export default function Dashboard() {
       });
   }, []);
 
+  // 🔴 LOGOUT FUNCTION (ADDED HERE)
+  const logout = () => {
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-950 text-white">
       <div className="bg-gray-900 p-6 rounded-xl shadow-lg w-100 text-center">
@@ -55,6 +61,12 @@ export default function Dashboard() {
         ) : (
           <p>Loading...</p>
         )}
+        <button
+          onClick={logout}
+          className="mt-4 w-full bg-red-600 hover:bg-red-700 transition p-3 rounded font-semibold"
+        >
+          Logout
+        </button>
       </div>
     </div>
   );

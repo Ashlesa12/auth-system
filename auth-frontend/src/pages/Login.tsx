@@ -32,7 +32,7 @@ export default function Login() {
       
       <form
         onSubmit={handleLogin}
-        className="w-87.5 bg-gray-900 p-6 rounded-xl shadow-lg space-y-4"
+        className="w-87 bg-gray-900 p-6 rounded-xl shadow-lg space-y-4"
       >
         <h1 className="text-2xl font-bold text-center">
           Login
