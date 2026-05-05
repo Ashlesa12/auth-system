@@ -6,8 +6,8 @@ export default function AuthLayout() {
     <div className="min-h-screen flex items-center justify-center p-4 py-12 relative overflow-hidden bg-background">
       {/* Background decoration */}
       <div className="pointer-events-none fixed inset-0 flex items-center justify-center opacity-20">
-        <div className="absolute w-[600px] h-[600px] bg-primary/20 rounded-full blur-3xl -top-32 -left-32 animate-pulse" />
-        <div className="absolute w-[400px] h-[400px] bg-sky-500/20 rounded-full blur-3xl -bottom-32 -right-32 animate-pulse" />
+        <div className="absolute w-150 h-150 bg-primary/20 rounded-full blur-3xl -top-32 -left-32 animate-pulse" />
+        <div className="absolute w-100 h-100 bg-sky-500/20 rounded-full blur-3xl -bottom-32 -right-32 animate-pulse" />
       </div>
 
       <div className="z-10 w-full max-w-md">
