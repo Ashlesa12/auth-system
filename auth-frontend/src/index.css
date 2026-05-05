@@ -1,29 +1,71 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #09090b;
-  --color-foreground: #fafafa;
-  --color-card: #18181b;
-  --color-card-foreground: #fafafa;
-  --color-border: #27272a;
-  --color-input: #27272a;
-  --color-primary: #0ea5e9;
-  --color-primary-foreground: #ffffff;
-  --color-secondary: #27272a;
-  --color-secondary-foreground: #fafafa;
-  --color-muted: #27272a;
-  --color-muted-foreground: #a1a1aa;
-  --color-accent: #27272a;
-  --color-accent-foreground: #fafafa;
-  --color-destructive: #ef4444;
-  --color-destructive-foreground: #fafafa;
-  --color-ring: #0ea5e9;
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-fg);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-fg);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-fg);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-fg);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-fg);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-fg);
+  --color-ring: var(--ring);
   --radius-lg: 0.5rem;
   --radius-md: calc(0.5rem - 2px);
   --radius-sm: calc(0.5rem - 4px);
 }
 
 @layer base {
+  :root {
+    --bg: #f8fafc;
+    --fg: #0f172a;
+    --card: #ffffff;
+    --card-fg: #0f172a;
+    --border: #e2e8f0;
+    --input: #e2e8f0;
+    --primary: #0ea5e9;
+    --primary-fg: #ffffff;
+    --secondary: #f1f5f9;
+    --secondary-fg: #0f172a;
+    --muted: #f1f5f9;
+    --muted-fg: #64748b;
+    --accent: #f1f5f9;
+    --accent-fg: #0f172a;
+    --destructive: #ef4444;
+    --destructive-fg: #ffffff;
+    --ring: #0ea5e9;
+    color-scheme: light;
+  }
+
+  .dark {
+    --bg: #09090b;
+    --fg: #fafafa;
+    --card: #18181b;
+    --card-fg: #fafafa;
+    --border: #27272a;
+    --input: #27272a;
+    --primary: #0ea5e9;
+    --primary-fg: #ffffff;
+    --secondary: #27272a;
+    --secondary-fg: #fafafa;
+    --muted: #27272a;
+    --muted-fg: #a1a1aa;
+    --accent: #27272a;
+    --accent-fg: #fafafa;
+    --destructive: #ef4444;
+    --destructive-fg: #fafafa;
+    --ring: #0ea5e9;
+    color-scheme: dark;
+  }
+
   *,
   ::after,
   ::before,
@@ -36,6 +78,5 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     @apply antialiased min-h-screen font-sans;
-    color-scheme: dark;
   }
 }

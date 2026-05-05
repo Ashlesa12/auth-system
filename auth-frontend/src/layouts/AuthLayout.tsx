@@ -1,9 +1,14 @@
 import { Outlet } from "react-router-dom";
 import { Shield } from "lucide-react";
+import { ModeToggle } from "../components/ModeToggle";
 
 export default function AuthLayout() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 py-12 relative overflow-hidden bg-background">
+      <div className="absolute top-4 right-4 z-50">
+        <ModeToggle />
+      </div>
+      
       {/* Background decoration */}
       <div className="pointer-events-none fixed inset-0 flex items-center justify-center opacity-20">
         <div className="absolute w-150 h-150 bg-primary/20 rounded-full blur-3xl -top-32 -left-32 animate-pulse" />

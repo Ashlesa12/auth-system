@@ -3,6 +3,7 @@ import { LogOut, User as UserIcon, LayoutDashboard, Key, ShieldCheck } from "luc
 import { useAuth } from "../contexts/AuthContext";
 import { Button } from "../components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card";
+import { ModeToggle } from "../components/ModeToggle";
 
 export default function Dashboard() {
   const { user, logout } = useAuth();
@@ -17,6 +18,7 @@ export default function Dashboard() {
             <span className="font-semibold text-lg tracking-tight text-foreground">Vault Dashboard</span>
           </div>
           <div className="flex items-center gap-4">
+            <ModeToggle />
             <span className="text-sm text-muted-foreground hidden sm:inline-block">
               {user?.email}
             </span>

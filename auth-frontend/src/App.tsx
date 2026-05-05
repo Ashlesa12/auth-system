@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "./contexts/ThemeContext";
 import { AuthProvider } from "./contexts/AuthContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import AuthLayout from "./layouts/AuthLayout";
@@ -9,11 +10,12 @@ import Dashboard from "./pages/Dashboard";
 
 export default function App() {
   return (
-    <AuthProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AuthLayout />}>
-            <Route path="/" element={<Navigate to="/login" replace />} />
+    <ThemeProvider defaultTheme="dark">
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<AuthLayout />}>
+              <Route path="/" element={<Navigate to="/login" replace />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
           </Route>
@@ -24,17 +26,18 @@ export default function App() {
         </Routes>
       </BrowserRouter>
       
-      <Toaster 
-        position="bottom-center"
-        toastOptions={{
-          style: {
-            background: 'var(--color-card)',
-            color: 'var(--color-foreground)',
-            border: '1px solid var(--color-border)',
-            borderRadius: 'var(--radius-lg)',
-          },
-        }}
-      />
-    </AuthProvider>
+        <Toaster 
+          position="bottom-center"
+          toastOptions={{
+            style: {
+              background: 'var(--color-card)',
+              color: 'var(--color-foreground)',
+              border: '1px solid var(--color-border)',
+              borderRadius: 'var(--radius-lg)',
+            },
+          }}
+        />
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
